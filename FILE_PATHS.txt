@@ -1,0 +1,75 @@
+=================================================================
+              CRACKNET - COMPLETE FILE PATHS LIST
+=================================================================
+
+📁 ROOT LEVEL FILES (6 files)
+─────────────────────────────────────────────────────────────────
+/app/README.md
+/app/QUICKSTART.md
+/app/USAGE_GUIDE.md
+/app/PROJECT_SUMMARY.md
+/app/DOWNLOAD_GUIDE.md
+/app/requirements.txt
+/app/.env
+
+📁 SOURCE CODE - src/ (8 files)
+─────────────────────────────────────────────────────────────────
+/app/src/clean_data.py
+/app/src/train_model.py
+
+📁 SOURCE CODE - src/app/ (1 file)
+─────────────────────────────────────────────────────────────────
+/app/src/app/app.py
+
+📁 SOURCE CODE - src/app/features/ (1 file)
+─────────────────────────────────────────────────────────────────
+/app/src/app/features/utils.py
+
+📁 SOURCE CODE - src/simulator/ (1 file)
+─────────────────────────────────────────────────────────────────
+/app/src/simulator/crack_time.py
+
+📁 FRONTEND - src/app/templates/ (1 file)
+─────────────────────────────────────────────────────────────────
+/app/src/app/templates/index.html
+
+📁 FRONTEND - src/app/static/css/ (1 file)
+─────────────────────────────────────────────────────────────────
+/app/src/app/static/css/style.css
+
+📁 FRONTEND - src/app/static/js/ (1 file)
+─────────────────────────────────────────────────────────────────
+/app/src/app/static/js/main.js
+
+📁 DATA FILES - data/processed/ (1 file)
+─────────────────────────────────────────────────────────────────
+/app/data/processed/cleaned_passwords.csv
+
+📁 ML MODELS - models/ (2 files)
+─────────────────────────────────────────────────────────────────
+/app/models/password_model.pkl
+/app/models/label_encoder.pkl
+
+📁 EMPTY FOLDERS (Create these locally)
+─────────────────────────────────────────────────────────────────
+/app/data/raw/                    (for RockYou dataset)
+
+=================================================================
+                    TOTAL: 23 FILES TO DOWNLOAD
+=================================================================
+
+FOLDERS TO CREATE:
+  • src/
+  • src/app/
+  • src/app/features/
+  • src/app/templates/
+  • src/app/static/
+  • src/app/static/css/
+  • src/app/static/js/
+  • src/simulator/
+  • data/
+  • data/raw/
+  • data/processed/
+  • models/
+
+=================================================================
