@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrackNet - AI Password Analysis System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                    <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="20" cy="20" r="3" fill="white"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="100%" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>CrackNet</h1>
+            </div>
+            <p class="tagline">AI-Powered Password Security Analysis</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="card">
+                    <h2>Analyze Your Password</h2>
+                    <p class="description">Enter a password to check its strength against modern AI-driven attacks</p>
+                    
+                    <div class="input-group">
+                        <input 
+                            type="password" 
+                            id="passwordInput" 
+                            placeholder="Enter password to analyze..."
+                            autocomplete="off"
+                        >
+                        <button class="toggle-visibility" id="togglePassword" type="button">
+                            <span class="eye-icon">👁️</span>
+                        </button>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-primary" id="analyzeBtn">
+                            <span class="btn-icon">🔍</span>
+                            Analyze Password
+                        </button>
+                        <button class="btn btn-secondary" id="checkBreachBtn">
+                            <span class="btn-icon">⚠️</span>
+                            Check Breach Status
+                        </button>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <strong>Privacy Note:</strong> Your password is analyzed locally and securely. For breach checks, only a partial hash is sent using the k-anonymity model.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <!-- Strength Overview -->
+                <div class="card strength-overview">
+                    <h2>Strength Assessment</h2>
+                    <div class="strength-display">
+                        <div class="strength-badge" id="strengthBadge">-</div>
+                        <div class="strength-details">
+                            <div class="score-container">
+                                <div class="score-label">Security Score</div>
+                                <div class="score-value" id="scoreValue">0/100</div>
+                            </div>
+                            <div class="risk-container">
+                                <div class="risk-label">Risk Level</div>
+                                <div class="risk-badge" id="riskBadge">-</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual Meter -->
+                    <div class="meter">
+                        <div class="meter-fill" id="meterFill"></div>
+                    </div>
+                </div>
+
+                <!-- Crack Time Analysis -->
+                <div class="card crack-time-card">
+                    <h2>Time-to-Crack Analysis</h2>
+                    <p class="description">Estimated time to crack this password using different attack methods</p>
+                    
+                    <div class="crack-times">
+                        <div class="crack-time-item">
+                            <div class="attack-type">
+                                <span class="icon">🖥️</span>
+                                <span>Basic Attack</span>
+                            </div>
+                            <div class="time-value" id="basicTime">-</div>
+                            <div class="attack-desc">1M guesses/sec</div>
+                        </div>
+                        
+                        <div class="crack-time-item">
+                            <div class="attack-type">
+                                <span class="icon">🎮</span>
+                                <span>GPU Attack</span>
+                            </div>
+                            <div class="time-value" id="gpuTime">-</div>
+                            <div class="attack-desc">1B guesses/sec</div>
+                        </div>
+                        
+                        <div class="crack-time-item highlighted">
+                            <div class="attack-type">
+                                <span class="icon">🤖</span>
+                                <span>AI-Enhanced Attack</span>
+                            </div>
+                            <div class="time-value" id="aiTime">-</div>
+                            <div class="attack-desc">100B guesses/sec</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pattern Detection -->
+                <div class="card patterns-card">
+                    <h2>Pattern Detection</h2>
+                    <div id="patternsContainer">
+                        <p class="no-data">No patterns analyzed yet</p>
+                    </div>
+                </div>
+
+                <!-- Security Scorecard -->
+                <div class="card scorecard-card">
+                    <h2>Security Scorecard</h2>
+                    <div id="scorecardContainer">
+                        <p class="no-data">No scorecard data yet</p>
+                    </div>
+                </div>
+
+                <!-- Breach Check Result -->
+                <div class="card breach-card" id="breachCard" style="display: none;">
+                    <h2>Breach Status</h2>
+                    <div id="breachResult"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>CrackNet &copy; 2025 - AI-Based Password Cracking System</p>
+            <p class="disclaimer">Educational purposes only. Never test passwords on live systems without authorization.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
